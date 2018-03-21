@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>FriendFinder</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+        <script src="https://code.jquery.com/jquery.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+      
+        <!-- Font Awesome Glyphicons -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+      
+        <!-- Chosen -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.jquery.min.js"></script>
+      
+      </head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-8 articlestyle">
+                <div id="myModal" class="modal fade">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                <h4 id=bestFriend class="modal-title"></h4>
+                            </div>
+                            <div class="modal-body">
+                                    
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-xs-12 col-sm-12 col-md-10">
+                <h2>Survey Questions</h2>
+
+                <h3>About You</h3>
+                <form id="friendForm">
+                    <div class="form-group">
+                    <label for="friendName">Name (Required)</label>
+                    <input type="text" class="form-control" id="friendName" placeholder="Name">
+                    </div>
+                    <div class="form-group">
+                        <label for="friendPhoto">Link to Photo Image (Required)</label>
+                        <input type="url" class="form-control" id="friendPhoto" placeholder="Photo">
+                    </div>
+                    <h4>Do you smell something?</h4>
+                    <select class="form-control" id="q1">
+                        <option>Select an Option</option>
+                        <option value=1>1 (Strongly Disagree)</option>
+                        <option value=2>2</option>
+                        <option value=3>3</option>
+                        <option value=4>4</option>
+                        <option value=5>5 (Strongly Agree)</option>
+                    </select>
+                    <h4>Does the term "Body Parser" make you uncomfortable?</h4>
+                    <select class="form-control" id="q2">
+                        <option>Select an Option</option>
+                        <option value=1>1 (Strongly Disagree)</option>
+                        <option value=2>2</option>
+                        <option value=3>3</option>
+                        <option value=4>4</option>
+                        <option value=5>5 (Strongly Agree)</option>
+                    </select>
+                    <h4>Do you like movies about gladiators?</h4>
+                    <select class="form-control" id="q3">
+                        <option>Select an Option</option>
+                        <option value=1>1 (Strongly Disagree)</option>
+                        <option value=2>2</option>
+                        <option value=3>3</option>
+                        <option value=4>4</option>
+                        <option value=5>5 (Strongly Agree)</option>
+                    </select>
+                    <h4>Do you believe in magic?</h4>
+                    <select class="form-control" id="q4">
+                        <option>Select an Option</option>
+                        <option value=1>1 (Strongly Disagree)</option>
+                        <option value=2>2</option>
+                        <option value=3>3</option>
+                        <option value=4>4</option>
+                        <option value=5>5 (Strongly Agree)</option>
+                    </select>
+                    <h4>Do you Strongly Disagree</h4>
+                    <select class="form-control" id="q5">
+                        <option>Select an Option</option>
+                        <option value=1>1 (Strongly Disagree)</option>
+                        <option value=2>2</option>
+                        <option value=3>3</option>
+                        <option value=4>4</option>
+                        <option value=5>5 (Strongly Agree)</option>
+                    </select>
+                    <h4></h4>
+                    <h4>Are all of your fingers the same size?</h4>
+                    <select class="form-control" id="q6">
+                        <option>Select an Option</option>
+                        <option value=1>1 (Strongly Disagree)</option>
+                        <option value=2>2</option>
+                        <option value=3>3</option>
+                        <option value=4>4</option>
+                        <option value=5>5 (Strongly Agree)</option>
+                    </select>
+                    <h4>That's so Raven?</h4>
+                    <select class="form-control" id="q7">
+                        <option>Select an Option</option>
+                        <option value=1>1 (Strongly Disagree)</option>
+                        <option value=2>2</option>
+                        <option value=3>3</option>
+                        <option value=4>4</option>
+                        <option value=5>5 (Strongly Agree)</option>
+                    </select>
+                    <h4>Do you like raisins?</h4>
+                    <select class="form-control" id="q8">
+                        <option>Select an Option</option>
+                        <option value=1>1 (Strongly Disagree)</option>
+                        <option value=2>2</option>
+                        <option value=3>3</option>
+                        <option value=4>4</option>
+                        <option value=5>5 (Strongly Agree)</option>
+                    </select>
+                    <h4>Do raisins like you?</h4>
+                    <select class="form-control" id="q9">
+                        <option>Select an Option</option>
+                        <option value=1>1 (Strongly Disagree)</option>
+                        <option value=2>2</option>
+                        <option value=3>3</option>
+                        <option value=4>4</option>
+                        <option value=5>5 (Strongly Agree)</option>
+                    </select>
+                    <h4>Did you like this survey?</h4>
+                    <select class="form-control" id="q10">
+                        <option>Select an Option</option>
+                        <option value=1>1 (Strongly Disagree)</option>
+                        <option value=2>2</option>
+                        <option value=3>3</option>
+                        <option value=4>4</option>
+                        <option value=5>5 (Strongly Agree)</option>
+                    </select>
+                </form>
+                    <button id="submit" type="submit" class="btn btn-default">Submit</button>
+            </div>    
+            <div class="col-md-1"></div>
+        </div>
+    </div>
+</body>
+<script type="text/javascript">
+
+    $("#submit").on("click", function(event) {
+        event.preventDefault();
+        var scores = [];
+
+        for (var i = 1; i <= 10; i++) {
+            score = $("#q" + i).val().trim();
+            scores.push(score);
+        }
+
+        var newFriend = {
+            name: $("#friendName").val().trim(),
+            photo: $("#friendPhoto").val().trim(),
+            scores: scores
+        };
+
+        $.post("/api/friends", newFriend)
+         .then(function(data) {
+            console.log(data);
+            console.log("BAHL");
+
+            $("#bestFriend").text(data.name);
+            bestFriendImg = $("<img>");
+            bestFriendImg.attr("src", data.photo);
+            bestFriendImg.attr("alt", data.name);
+            bestFriendImg.addClass("img-responsive img-rounded");
+            $(".modal-body").append(bestFriendImg);
+
+            $("#myModal").modal('show');
+
+           
+         });
+
+        $("#friendForm")[0].reset();
+    });
+  </script>
+</html>
