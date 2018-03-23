@@ -1,8 +1,10 @@
 var bodyParser = require("body-parser");
 var friendData = require("../data/friends")
+var fs = require("fs");
+var path = require("path");
 
 module.exports = function(app){
-  //HAVE A LOOK AT hotrestaurant - much different
+  
     app.get('/api/friends', function(req, res){
       res.json(friendData);
     });
@@ -38,5 +40,16 @@ module.exports = function(app){
   
       //after all that add the new friend into the dataset
       friendData.push(newFriend);
+
+      //write the dataset to the friends file
+      var json = JSON.stringify(friendData);
+      
+      fs.writeFile(path.join(__dirname, "../data/friends.js"), json, "utf8", function(err) {
+
+        if (err) {
+          return console.log(err);
+        }
+
+      });
     });
   };
