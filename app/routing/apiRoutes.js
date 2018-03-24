@@ -1,9 +1,7 @@
 var bodyParser = require("body-parser");
 var friendData = require("../data/friends")
-var fs = require("fs");
-var path = require("path");
-
-console.log(friendData);
+//var fs = require("fs");
+//var path = require("path");
 
 module.exports = function(app){
   
