@@ -23,14 +23,14 @@
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                <button type="button" class="close closemodal" data-dismiss="modal" aria-hidden="true">&times;</button>
                                 <h3 class="modal-title">Best Match!</h3>
                             </div>
                             <div class="modal-body">
                                 <h4 id=bestFriend></h4>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-default closemodal" data-dismiss="modal">Close</button>
                             </div>
                         </div>
                     </div>
@@ -183,9 +183,24 @@
             $("#myModal").modal('show');
 
            
-         });
+        });
 
-        $("#friendForm")[0].reset();
+        function clearTable() {
+            console.log("DONE");
+            var currentURL = window.location.origin;
+                $.ajax({ url: currentURL + "/api/clear", method: "POST" });
+
+        }
+
+        $(".closemodal").on("click", function() {
+            clearTable();
+            console.log("DONE");
+            // Refresh the page after data is cleared
+            location.reload();
+
+        });
+
+        //$("#friendForm")[0].reset();
     });
   </script>
 </html>

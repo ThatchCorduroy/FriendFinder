@@ -3,6 +3,8 @@ var friendData = require("../data/friends")
 var fs = require("fs");
 var path = require("path");
 
+console.log(friendData);
+
 module.exports = function(app){
   
     app.get('/api/friends', function(req, res){
@@ -41,15 +43,15 @@ module.exports = function(app){
       //after all that add the new friend into the dataset
       friendData.push(newFriend);
 
-      //write the dataset to the friends file
-      var json = JSON.stringify(friendData);
+      // //write the dataset to the friends file
+      // var json = JSON.stringify(friendData);
       
-      fs.writeFile(path.join(__dirname, "../data/friends.js"), json, "utf8", function(err) {
+      // fs.writeFile(path.join(__dirname, "../data/friends.js"), json, "utf8", function(err) {
 
-        if (err) {
-          return console.log(err);
-        }
+      //   if (err) {
+      //     return console.log(err);
+      //   }
 
-      });
+      // });
     });
   };
