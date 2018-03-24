@@ -148,7 +148,11 @@
                     </select>
                 </form>
                     <button id="submit" type="submit" class="btn btn-default">Submit</button>
-            </div>    
+            </div>   
+            <footer>
+                <a href="/api/friends">API Friends List</a>
+                <a href="https://github.com/ThatchCorduroy/FriendFinder">GitHub Repo</a>
+            </footer> 
             <div class="col-md-1"></div>
         </div>
     </div>
@@ -186,7 +190,6 @@
         });
 
         function clearTable() {
-            console.log("DONE");
             var currentURL = window.location.origin;
                 $.ajax({ url: currentURL + "/api/clear", method: "POST" });
 
@@ -194,7 +197,6 @@
 
         $(".closemodal").on("click", function() {
             clearTable();
-            console.log("DONE");
             // Refresh the page after data is cleared
             location.reload();
 
